@@ -1,2 +1,2 @@
 # InfoTeach
-This is the project i have done in InfoTeach entern 
+These are projects i have done in InfoTeach intern 
