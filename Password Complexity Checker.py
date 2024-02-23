@@ -2,31 +2,31 @@ import re
 
 def assess_password_strength(password):
     # Check if the password length is at least 8 characters
-    password_length = len(password)
-    if password_length < 8:
+    password_len = len(password)
+    if password_len < 8:
         return "Weak: Password should be at least 8 characters long."
 
     # Check if the password contains at least one uppercase letter
-    has_uppercase = bool(re.search(r'[A-Z]', password))
+    has_upper = bool(re.search(r'[A-Z]', password))
     
     # Check if the password contains at least one lowercase letter
-    has_lowercase = bool(re.search(r'[a-z]', password))
+    has_lower = bool(re.search(r'[a-z]', password))
     
     # Check if the password contains at least one digit
     has_digit = bool(re.search(r'\d', password))
     
     # Check if the password contains at least one special character
-    has_special_char = bool(re.search(r'[^A-Za-z0-9]', password))
+    has_special = bool(re.search(r'[^A-Za-z0-9]', password))
 
     # Identify missing elements and provide feedback
     missing_elements = []
-    if not has_uppercase:
+    if not has_upper:
         missing_elements.append("uppercase letters")
-    if not has_lowercase:
+    if not has_lower:
         missing_elements.append("lowercase letters")
     if not has_digit:
         missing_elements.append("numbers")
-    if not has_special_char:
+    if not has_special:
         missing_elements.append("special characters")
 
     # Return the password strength feedback
